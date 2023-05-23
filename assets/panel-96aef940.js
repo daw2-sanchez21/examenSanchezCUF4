@@ -1,4 +1,4 @@
-import { s as supabase } from "./main-31543197.js";
+import { s as supabase } from "./main-e00be6ac.js";
 console.log("Conecciton done");
 class Tiquet {
   constructor(id = null, created_at = null, codigos = null, aula = null, grupo = null, ordenador = null, descripcion = null, alumno = null, estado = null) {
@@ -131,8 +131,7 @@ const panel = {
         eliminarObt.addEventListener("click", async (e) => {
           const obtIdeliminar = e.target.id;
           const IdEliminar = obtIdeliminar.replace("eliminar-", "");
-          console.log("Este es el id2 de eliminar: ", IdEliminar);
-          swal("Desea resolver el ticket?", {
+          swal("Desea eliminar el ticket?", {
             buttons: ["Cancelar", "Confirmar"]
           }).then(async (value) => {
             if (value) {
@@ -156,8 +155,23 @@ const panel = {
         <td>${tiquet.descripcion}</td>
         <td>${tiquet.alumno}</td>
         <td><a href="#" class="btn btn-info" color:white" id="comentar-${tiquet.id}"><i class="bi bi-chat-left-text"></i></a></td>
-        <td><a href="#" class="btn btn-warning" color:white" id="eliminar-${tiquet.id}"><i class="bi bi-trash3"></i></a></td>
+        <td><a href="#" class="btn btn-danger" color:white" id="eliminar2-${tiquet.id}"><i class="bi bi-trash3"></i></a></td>
         `;
+        const eliminarObt = tablatr2.querySelector(`#eliminar2-${tiquet.id}`);
+        eliminarObt.addEventListener("click", async (e) => {
+          const obtIdeliminar = e.target.id;
+          const IdEliminar = obtIdeliminar.replace("eliminar2-", "");
+          swal("Desea eliminar el ticket?", {
+            buttons: ["Cancelar", "Confirmar"]
+          }).then(async (value) => {
+            if (value) {
+              await Tiquet.eliminar(IdEliminar);
+              window.location = "#/panel";
+            } else {
+              swal({ title: "Cancelado", icon: "warning" });
+            }
+          });
+        });
         const tabla2 = document.querySelector("#tabla2");
         tabla2.appendChild(tablatr2);
       }

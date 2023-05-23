@@ -11675,8 +11675,7 @@ const header = {
   template: `<nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Gestión de incidencias FPLLEFIA</a>
-    <div>
-      <button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
+    <div id="menu">
       <button class="btn btn-secondary ms-2"><a href="/#/login" style="text-decoration:none; color:white;">LOGIN</a></button>
       <button class="btn btn-secondary ms-2"><a href="/#/registro" style="text-decoration:none; color:white;">REGISTRO</a></button>
     </div>
@@ -11687,17 +11686,24 @@ const header = {
   </div>
 </nav>`,
   async script() {
+    const menu = document.querySelector("#menu");
+    const log = User.getUser();
+    if (log) {
+      menu.innerHTML = `<button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
+        <button class="btn btn-secondary ms-2"><a href="/#/logout" style="text-decoration:none; color:white;">LOGOUT</a></button>
+        `;
+    }
   }
 };
 const footer = {
-  template: `<h1>Foter</h1>`
+  template: `<h1></h1>`
 };
 const enrutador = {
   rutas: {
-    login: __vitePreload(() => import("./login-e13283e7.js"), true ? [] : void 0, import.meta.url),
-    home: __vitePreload(() => import("./home-b8245d6a.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registro-60b6f82b.js"), true ? [] : void 0, import.meta.url),
-    panel: __vitePreload(() => import("./panel-d19a532b.js"), true ? [] : void 0, import.meta.url)
+    login: __vitePreload(() => import("./login-8e4420f9.js"), true ? [] : void 0, import.meta.url),
+    registro: __vitePreload(() => import("./registro-08766fca.js"), true ? [] : void 0, import.meta.url),
+    panel: __vitePreload(() => import("./panel-96aef940.js"), true ? [] : void 0, import.meta.url),
+    logout: __vitePreload(() => import("./logout-9d80300c.js"), true ? [] : void 0, import.meta.url)
   },
   async router() {
     const pathCompleto = window.location.hash;

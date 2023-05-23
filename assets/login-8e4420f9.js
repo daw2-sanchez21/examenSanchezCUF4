@@ -1,4 +1,4 @@
-import { h as header, U as User } from "./main-31543197.js";
+import { h as header, U as User } from "./main-e00be6ac.js";
 const login = {
   template: `<div class="pt-5">
   <h1 class="w-100 text-center">Login</h1>
@@ -14,7 +14,6 @@ const login = {
 </div>`,
   async script() {
     header.script();
-    document.querySelector("main");
     const formLogin = document.querySelector("#form-id");
     formLogin.addEventListener("submit", async (e) => {
       e.preventDefault();

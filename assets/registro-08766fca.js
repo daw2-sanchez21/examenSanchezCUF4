@@ -1,4 +1,4 @@
-import { U as User } from "./main-31543197.js";
+import { U as User } from "./main-e00be6ac.js";
 const registro = {
   template: `<div class="pt-5">
   <h1 class="w-100 text-center">Registro</h1>
@@ -14,8 +14,6 @@ const registro = {
   </form>
 </div>`,
   async script() {
-    const main = document.querySelector("main");
-    main.style.height = "1000px";
     const formUser = document.querySelector("#form-id");
     formUser.addEventListener("submit", async (e) => {
       e.preventDefault();

@@ -7,6 +7,7 @@ export const header = {
     <div id="menu">
       <button class="btn btn-secondary ms-2"><a href="/#/login" style="text-decoration:none; color:white;">LOGIN</a></button>
       <button class="btn btn-secondary ms-2"><a href="/#/registro" style="text-decoration:none; color:white;">REGISTRO</a></button>
+      <button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
     </div>
     <div>
       <span>administrador@fpllefia.com</span>
@@ -17,13 +18,6 @@ export const header = {
   async script (){
     const menu = document.querySelector('#menu')
     const log = User.getUser()
-    if(log){
-        menu.innerHTML=`<button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
-        <button class="btn btn-secondary ms-2"><a href="/#/logout" style="text-decoration:none; color:white;">LOGOUT</a></button>
-        `
-    }else{
-
-
-    }
+  
   }
 }

@@ -1,4 +1,4 @@
-import { U as User } from "./main-53a57959.js";
+import { U as User } from "./main-beaeeee2.js";
 const logout = {
   template: ``,
   async script() {

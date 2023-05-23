@@ -1,4 +1,4 @@
-import { U as User } from "./main-53a57959.js";
+import { U as User } from "./main-beaeeee2.js";
 const registro = {
   template: `<div class="pt-5">
   <h1 class="w-100 text-center">Registro</h1>

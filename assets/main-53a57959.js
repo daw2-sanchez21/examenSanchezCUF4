@@ -11678,6 +11678,7 @@ const header = {
     <div id="menu">
       <button class="btn btn-secondary ms-2"><a href="/#/login" style="text-decoration:none; color:white;">LOGIN</a></button>
       <button class="btn btn-secondary ms-2"><a href="/#/registro" style="text-decoration:none; color:white;">REGISTRO</a></button>
+      <button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
     </div>
     <div>
       <span>administrador@fpllefia.com</span>
@@ -11686,13 +11687,8 @@ const header = {
   </div>
 </nav>`,
   async script() {
-    const menu = document.querySelector("#menu");
-    const log = User.getUser();
-    if (log) {
-      menu.innerHTML = `<button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
-        <button class="btn btn-secondary ms-2"><a href="/#/logout" style="text-decoration:none; color:white;">LOGOUT</a></button>
-        `;
-    }
+    document.querySelector("#menu");
+    User.getUser();
   }
 };
 const footer = {
@@ -11700,10 +11696,10 @@ const footer = {
 };
 const enrutador = {
   rutas: {
-    login: __vitePreload(() => import("./login-8e4420f9.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registro-08766fca.js"), true ? [] : void 0, import.meta.url),
-    panel: __vitePreload(() => import("./panel-96aef940.js"), true ? [] : void 0, import.meta.url),
-    logout: __vitePreload(() => import("./logout-9d80300c.js"), true ? [] : void 0, import.meta.url)
+    login: __vitePreload(() => import("./login-0e5f795d.js"), true ? [] : void 0, import.meta.url),
+    registro: __vitePreload(() => import("./registro-be56d79d.js"), true ? [] : void 0, import.meta.url),
+    panel: __vitePreload(() => import("./panel-8fe04c57.js"), true ? [] : void 0, import.meta.url),
+    logout: __vitePreload(() => import("./logout-9ed6a6fb.js"), true ? [] : void 0, import.meta.url)
   },
   async router() {
     const pathCompleto = window.location.hash;

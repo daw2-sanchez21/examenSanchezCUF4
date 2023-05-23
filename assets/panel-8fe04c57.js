@@ -1,4 +1,4 @@
-import { s as supabase } from "./main-e00be6ac.js";
+import { s as supabase } from "./main-53a57959.js";
 console.log("Conecciton done");
 class Tiquet {
   constructor(id = null, created_at = null, codigos = null, aula = null, grupo = null, ordenador = null, descripcion = null, alumno = null, estado = null) {

@@ -18,6 +18,7 @@ export const header = {
   async script (){
     const menu = document.querySelector('#menu')
     const log = User.getUser()
-  
+    console.log("emaaail", log.email)
+    
   }
 }

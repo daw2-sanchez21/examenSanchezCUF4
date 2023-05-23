@@ -36,30 +36,6 @@ export class User {
     }
     return true
     }
-  // leer user logeado
-  static async getUser () {
-    try {
-      // GET USER
-      const { data: { user } } = await supabase.auth.getUser()
-      if (user) {
-        return new User(user.id, user.email)
-      } else {
-        return false
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  static async getAllUsers () {
-    
-    const { data: { users }, error } = await supabase.auth.admin.listUsers()
+  
 
-    if (users) {
-      return new User(users.id, users.email)
-    } else {
-      console.log(error)
-    }
-  }
-  
-  
 }

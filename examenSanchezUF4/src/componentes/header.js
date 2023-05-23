@@ -4,8 +4,7 @@ export const header = {
   template: `<nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">Gestión de incidencias FPLLEFIA</a>
-    <div>
-      <button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
+    <div id="menu">
       <button class="btn btn-secondary ms-2"><a href="/#/login" style="text-decoration:none; color:white;">LOGIN</a></button>
       <button class="btn btn-secondary ms-2"><a href="/#/registro" style="text-decoration:none; color:white;">REGISTRO</a></button>
     </div>
@@ -16,6 +15,15 @@ export const header = {
   </div>
 </nav>`,
   async script (){
+    const menu = document.querySelector('#menu')
+    const log = User.getUser()
+    if(log){
+        menu.innerHTML=`<button class="btn btn-secondary ms-2"><a href="/#/panel" style="text-decoration:none; color:white;">PANEL</a></button>
+        <button class="btn btn-secondary ms-2"><a href="/#/logout" style="text-decoration:none; color:white;">LOGOUT</a></button>
+        `
+    }else{
 
+
+    }
   }
 }

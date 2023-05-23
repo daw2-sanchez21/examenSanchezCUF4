@@ -16,8 +16,7 @@ export default {
 </div>`,
 
   async script() {
-    const main= document.querySelector('main')
-    main.style.height='1000px'
+    //Selccionamos el fromulario y le añadimos un listener para detectar el click
     const formUser = document.querySelector('#form-id')
     formUser.addEventListener('submit', async (e) => {
       e.preventDefault()

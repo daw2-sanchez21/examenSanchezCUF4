@@ -104,8 +104,8 @@ async script(){
             const obtIdeliminar = e.target.id
             //Eliminamos el texto resolver para quedarnos solo con el numero del id
             const IdEliminar = obtIdeliminar.replace("eliminar-", "")
-            console.log("Este es el id2 de eliminar: ", IdEliminar)
-            swal("Desea resolver el ticket?",{
+            
+            swal("Desea eliminar el ticket?",{
                 buttons:["Cancelar", "Confirmar"]
             })
             .then(async(value) => {
@@ -133,9 +133,33 @@ async script(){
         <td>${tiquet.descripcion}</td>
         <td>${tiquet.alumno}</td>
         <td><a href="#" class="btn btn-info" color:white" id="comentar-${tiquet.id}"><i class="bi bi-chat-left-text"></i></a></td>
-        <td><a href="#" class="btn btn-warning" color:white" id="eliminar-${tiquet.id}"><i class="bi bi-trash3"></i></a></td>
+        <td><a href="#" class="btn btn-danger" color:white" id="eliminar2-${tiquet.id}"><i class="bi bi-trash3"></i></a></td>
         `
+         //Eliminar
+         const eliminarObt = tablatr2.querySelector(`#eliminar2-${tiquet.id}`)
+         //Añadimos un listener para detectar click sobre este elemento
+         eliminarObt.addEventListener('click', async(e)=>{
+             const obtIdeliminar = e.target.id
+             //Eliminamos el texto resolver para quedarnos solo con el numero del id
+             const IdEliminar = obtIdeliminar.replace("eliminar2-", "")
+             
+             swal("Desea eliminar el ticket?",{
+                 buttons:["Cancelar", "Confirmar"]
+             })
+             .then(async(value) => {
+               if (value) {
+                 //Llamamos al metodo de tiquet
+                 await Tiquet.eliminar(IdEliminar)
+                 //Recargamos la pagina
+                 window.location = '#/panel'
+               } else {
+                 swal({title:'Cancelado', icon:'warning'})
+               }
+             })
+         })
+         //Seleccionamos la tabla
         const tabla2= document.querySelector('#tabla2')
+        //Añadimos al html
         tabla2.appendChild(tablatr2)
     }
 

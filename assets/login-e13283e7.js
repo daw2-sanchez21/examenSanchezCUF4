@@ -1,8 +1,8 @@
-import { h as header, U as User } from "./main-aa7210f3.js";
+import { h as header, U as User } from "./main-31543197.js";
 const login = {
-  template: `<<div class="pt-5">
+  template: `<div class="pt-5">
   <h1 class="w-100 text-center">Login</h1>
-  <form action="" class="form p-4 border shadow bordered mt-5 mx-auto" style="width: 400px;">
+  <form action="" class="form p-4 border shadow bordered mt-5 mx-auto" style="width: 400px;" id="form-id">
     <label for="email" class="mt-2 form-label">User: </label>
     <input type="text" class="form-control" placeholder="usuario@mail.com" id="email-id">
 

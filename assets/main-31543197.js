@@ -11649,6 +11649,27 @@ class User {
     }
     return true;
   }
+  // leer user logeado
+  static async getUser() {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        return new User(user.id, user.email);
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  static async getAllUsers() {
+    const { data: { users }, error } = await supabase.auth.admin.listUsers();
+    if (users) {
+      return new User(users.id, users.email);
+    } else {
+      console.log(error);
+    }
+  }
 }
 const header = {
   template: `<nav class="navbar navbar-light bg-light">
@@ -11673,10 +11694,10 @@ const footer = {
 };
 const enrutador = {
   rutas: {
-    login: __vitePreload(() => import("./login-450e81d4.js"), true ? [] : void 0, import.meta.url),
+    login: __vitePreload(() => import("./login-e13283e7.js"), true ? [] : void 0, import.meta.url),
     home: __vitePreload(() => import("./home-b8245d6a.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registro-059cf8dc.js"), true ? [] : void 0, import.meta.url),
-    panel: __vitePreload(() => import("./panel-4cc264e3.js"), true ? [] : void 0, import.meta.url)
+    registro: __vitePreload(() => import("./registro-60b6f82b.js"), true ? [] : void 0, import.meta.url),
+    panel: __vitePreload(() => import("./panel-d19a532b.js"), true ? [] : void 0, import.meta.url)
   },
   async router() {
     const pathCompleto = window.location.hash;
